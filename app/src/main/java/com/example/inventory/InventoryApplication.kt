@@ -44,7 +44,7 @@ class InventoryApplication : Application() {
         } else {
             secretKeyEntry.secretKey
         }
-        ItemRoomDatabase.getDatabase(this, secretKey.toString())
-//        ItemRoomDatabase.getDatabase(this)
+       ItemRoomDatabase.getDatabase(this, secretKey.toString())
+  //     ItemRoomDatabase.getDatabase(this)
     }
 }

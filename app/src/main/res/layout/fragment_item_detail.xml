@@ -152,12 +152,12 @@
         android:id="@+id/sell_item"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:text="@string/sell"
         app:layout_constraintBottom_toTopOf="@+id/delete_item"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_provider_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/item_record" />
 
     <Button
         android:id="@+id/delete_item"

@@ -91,6 +91,7 @@ class ItemDetailFragment : Fragment() {
             editItem.setOnClickListener { editItem() }
             shareItem.isEnabled = !sharedPreferences.getBoolean("SwitchForbid", false)
             shareItem.setOnClickListener { share(item) }
+            itemRecord.text = item.record.toString()
             saveInFileBtn.setOnClickListener {
                 // Request code for creating a PDF document.
                 createFile(Uri.parse(requireContext().filesDir.toString()))
@@ -172,20 +173,6 @@ class ItemDetailFragment : Fragment() {
                 }
             }
         }
-    }
-
-    private fun readTextFromUri(uri: Uri): String {
-        val stringBuilder = StringBuilder()
-        requireContext().contentResolver.openInputStream(uri)?.use { inputStream ->
-            BufferedReader(InputStreamReader(inputStream)).use { reader ->
-                var line: String? = reader.readLine()
-                while (line != null) {
-                    stringBuilder.append(line)
-                    line = reader.readLine()
-                }
-            }
-        }
-        return stringBuilder.toString()
     }
 
     private fun share(item: Item) {
